@@ -28,3 +28,12 @@ pub fn camera_rotations(state: CameraState, config: Config) -> Option<Vec<Rotati
     Some(result)
 }
 #[cfg(test)] mod tests { use super::*; #[test] fn default_disables_shake() {let s=CameraState {is_living:true,hurt_time:5.0,hurt_duration:10, ..Default::default()};let r=camera_rotations(s,Config::default()).unwrap();assert_eq!(r[1].degrees,0.0);} #[test] fn vanilla_at_one() {assert!(camera_rotations(CameraState::default(),Config{intensity:1.0}).is_none());} }
+
+ 
+// Native Horizon registration. The feature-specific client hooks are still
+// missing: this entry point does NOT activate the ported behavior in-game.
+use mod_api::*;
+#[derive(Default)]
+struct NativePort;
+#[mod_api::horizon_mod]
+impl Hooks for NativePort {}
