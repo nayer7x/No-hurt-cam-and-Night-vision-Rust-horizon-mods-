@@ -1,0 +1,4 @@
+[package]
+name = "fullbright_port"
+version = "1.4.0"
+edition = "2021"
