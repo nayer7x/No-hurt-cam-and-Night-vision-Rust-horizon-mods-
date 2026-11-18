@@ -1,0 +1,13 @@
+id = "fullbright_port"
+name = "Fullbright Multiplayer (Rust Port)"
+version = "1.4.0"
+description = "Rust logic port for Fullbright Multiplayer; Horizon hook integration is pending."
+authors = []
+api = "0.2"
+side = "client"
+capabilities = ["registries"]
+
+[native]
+game = "26.3"
+horizon = "bade262391477ff2a668e3ae5ea6ee34f3115035"
+mixins = "e59da9094f0c2fdda6c627fe9eff22dec6a906f0"
