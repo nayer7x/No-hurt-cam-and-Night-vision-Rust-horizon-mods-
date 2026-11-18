@@ -1,4 +1,12 @@
 [package]
 name = "no_hurtcam_port"
 version = "1.0.3"
-edition = "2021"
+edition = "2024"
+rust-version = "1.95"
+description = "No Hurt Cam camera logic port with a Horizon native entry point"
+
+[dependencies]
+horizon-mod-api = { path = ".horizon/sdk/api/crates/horizon-mod-api" }
+
+[dev-dependencies]
+horizon-mod-api = { path = ".horizon/sdk/api/crates/horizon-mod-api", features = ["testing"] }
