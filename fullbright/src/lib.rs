@@ -29,3 +29,12 @@ impl Fullbright {
     }
 }
 #[cfg(test)] mod tests { use super::*; #[test] fn toggle() {let mut m=Fullbright::default();assert!(m.enabled("a"));m.request_toggle("a");assert!(m.tick(["a"]).iter().any(|a|matches!(a,Action::Message{enabled:false,..})));assert!(!m.enabled("a"));} }
+
+ 
+// Native Horizon registration. The feature-specific client hooks are still
+// missing: this entry point does NOT activate the ported behavior in-game.
+use mod_api::*;
+#[derive(Default)]
+struct NativePort;
+#[mod_api::horizon_mod]
+impl Hooks for NativePort {}
